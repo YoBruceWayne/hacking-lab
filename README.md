@@ -171,7 +171,3 @@ Open Firefox in Kali → navigate to `http://192.168.128.3` → Mr. Robot landin
 - [Kali Linux Downloads](https://www.kali.org/get-kali/)
 - [VulnHub — Vulnerable VMs](https://www.vulnhub.com/)
 - [NetworkChuck — Original Tutorial (YouTube)](https://www.youtube.com/networkchuck) (Thank you!)
-
----
-
-*Built in March 2026 as part of my cybersecurity learning journey.*
