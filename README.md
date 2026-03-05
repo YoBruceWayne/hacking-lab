@@ -2,7 +2,7 @@
 
 A complete, isolated penetration testing lab running on a single Apple Silicon Mac — built with free, open-source tools.
 
-![Mr. Robot Landing Page](screenshots/13-mrrobot-landing-page.png)
+![Mr. Robot Landing Page](screenshots/07-mrrobot-landing-page.png)
 
 ## Overview
 
@@ -115,7 +115,7 @@ Open Firefox in Kali → navigate to `http://192.168.128.3` → Mr. Robot landin
 
 **Problem:** VM dropped into UEFI Interactive Shell instead of booting.
 
-![UEFI Shell Error](screenshots/14-uefi-shell-error.png)
+![UEFI Shell Error](screenshots/08-uefi-shell-error.png)
 
 **Root cause:** The Mr. Robot VM is built for Intel x86. Setting it up as ARM64 (Virtualize mode) meant UTM couldn't find a compatible bootloader on the disk.
 
@@ -127,7 +127,7 @@ Open Firefox in Kali → navigate to `http://192.168.128.3` → Mr. Robot landin
 
 **Problem:** Scan showed the Mac gateway and Kali, but no Mr. Robot VM.
 
-![Nmap 2 Hosts](screenshots/15-nmap-only-2-hosts.png)
+![Nmap 2 Hosts](screenshots/09-nmap-only-2-hosts.png)
 
 **Root cause:** The Mr. Robot VM was the broken ARM64 version stuck in the UEFI shell — it wasn't running an OS, so it had no network presence.
 
@@ -139,7 +139,6 @@ Open Firefox in Kali → navigate to `http://192.168.128.3` → Mr. Robot landin
 
 **Problem:** `qemu-img convert` failed with `Operation not permitted`.
 
-![Bitdefender Block](screenshots/07-bitdefender-block.png)
 
 **Fix:** Clicked **Trust Application** in the Bitdefender popup, then re-ran the command successfully. Host antivirus software may need to whitelist security tools.
 
@@ -150,18 +149,12 @@ Open Firefox in Kali → navigate to `http://192.168.128.3` → Mr. Robot landin
 | `01-utm-installed.png` | UTM application with empty VM list |
 | `02-kali-installer.png` | Kali Linux graphical installer in UTM |
 | `03-kali-desktop.png` | Kali Linux desktop after login |
-| `04-mrrobot-ova-file-info.png` | Finder info showing the 737.6 MB OVA file |
-| `05-tar-extract.png` | Terminal: extracting files from the OVA |
-| `06-brew-install-qemu.png` | Terminal: Homebrew installing QEMU |
-| `07-bitdefender-block.png` | Bitdefender blocking qemu-img |
-| `08-qcow2-converted.png` | Terminal: 2.0 GB qcow2 file confirmed |
-| `09-emulate-x86-setup.png` | UTM summary: x86_64 emulation config |
-| `10-drive-imported.png` | UTM drives: mrrobot.qcow2 at 1.97 GB |
-| `11-kali-ip-addr.png` | Kali terminal: IP address 192.168.128.2 |
-| `12-nmap-scan-success.png` | Nmap: 3 hosts found, Mr. Robot at .3 |
-| `13-mrrobot-landing-page.png` | Mr. Robot web page in Firefox |
-| `14-uefi-shell-error.png` | UEFI shell (wrong VM config) |
-| `15-nmap-only-2-hosts.png` | Nmap: only 2 hosts (before fix) |
+| `04-emulate-x86-setup.png` | UTM summary: x86_64 emulation config |
+| `05-drive-imported.png` | UTM drives: mrrobot.qcow2 at 1.97 GB |
+| `06-kali-ip-addr.png` | Kali terminal: IP address 192.168.128.2 |
+| `07-mrrobot-landing-page.png` | Mr. Robot web page in Firefox |
+| `08-uefi-shell-error.png` | UEFI shell (wrong VM config) |
+| `09-nmap-only-2-hosts.png` | Nmap: only 2 hosts (before fix) |
 
 ## Key Takeaways
 
@@ -172,19 +165,12 @@ Open Firefox in Kali → navigate to `http://192.168.128.3` → Mr. Robot landin
 5. **Network isolation is non-negotiable.** Always use Host Only networking for vulnerable VMs.
 6. **Troubleshooting is the real learning.** Every mistake taught something about VM architecture, boot processes, and networking.
 
-## Next Steps
-
-- [ ] Complete the Mr. Robot CTF (3 keys to find)
-- [ ] Write a separate walkthrough for the CTF
-- [ ] Add more vulnerable VMs (Metasploitable 2, DVWA, Kioptrix)
-- [ ] Explore TryHackMe and Hack The Box
-
 ## Resources
 
 - [UTM — Virtual Machines for Mac](https://mac.getutm.app)
 - [Kali Linux Downloads](https://www.kali.org/get-kali/)
 - [VulnHub — Vulnerable VMs](https://www.vulnhub.com/)
-- [NetworkChuck — Original Tutorial (YouTube)](https://www.youtube.com/networkchuck)
+- [NetworkChuck — Original Tutorial (YouTube)](https://www.youtube.com/networkchuck) (Thank you!)
 
 ---
 
