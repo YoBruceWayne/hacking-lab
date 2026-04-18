@@ -1,6 +1,6 @@
 # 🔐 Hacking Lab on Apple Silicon Mac (M4)
 
-A complete, isolated penetration testing lab running on a single Apple Silicon Mac — built with free, open-source tools.
+A complete, isolated penetration testing lab running on a single Apple Silicon Mac. built with free, open-source tools.
 
 ![Mr. Robot Landing Page](screenshots/07-mrrobot-landing-page.png)
 
@@ -8,9 +8,9 @@ A complete, isolated penetration testing lab running on a single Apple Silicon M
 
 This project documents how I built a safe, secure hacking environment on an Apple M4 Mac using:
 
-- **[UTM](https://mac.getutm.app)** — Free macOS virtualization (replaces VirtualBox for Apple Silicon)
-- **[Kali Linux ARM64](https://www.kali.org/get-kali/)** — Industry-standard penetration testing OS
-- **[Mr. Robot VM](https://www.vulnhub.com/)** — Deliberately vulnerable CTF target from VulnHub
+- **[UTM](https://mac.getutm.app)** - Free macOS virtualization (replaces VirtualBox for Apple Silicon)
+- **[Kali Linux ARM64](https://www.kali.org/get-kali/)** - Industry-standard penetration testing OS
+- **[Mr. Robot VM](https://www.vulnhub.com/)** - Deliberately vulnerable CTF target from VulnHub
 
 The lab runs entirely on one machine with **Host Only networking**, meaning the vulnerable target is completely isolated from the internet and home network.
 
@@ -94,7 +94,7 @@ Set **both VMs** to **Host Only** networking in UTM settings. This ensures:
 ### 6. Verify the Lab
 
 ```bash
-# In Kali — check your IP
+# In Kali - check your IP
 ip addr
 # → 192.168.128.2
 
@@ -129,7 +129,7 @@ Open Firefox in Kali → navigate to `http://192.168.128.3` → Mr. Robot landin
 
 ![Nmap 2 Hosts](screenshots/09-nmap-only-2-hosts.png)
 
-**Root cause:** The Mr. Robot VM was the broken ARM64 version stuck in the UEFI shell — it wasn't running an OS, so it had no network presence.
+**Root cause:** The Mr. Robot VM was the broken ARM64 version stuck in the UEFI shell it wasn't running an OS, so it had no network presence.
 
 **Fix:** After recreating the VM correctly with x86 emulation, it booted into Linux, got an IP address, and appeared in the next Nmap scan.
 
@@ -167,7 +167,7 @@ Open Firefox in Kali → navigate to `http://192.168.128.3` → Mr. Robot landin
 
 ## Resources
 
-- [UTM — Virtual Machines for Mac](https://mac.getutm.app)
+- [UTM - Virtual Machines for Mac](https://mac.getutm.app)
 - [Kali Linux Downloads](https://www.kali.org/get-kali/)
-- [VulnHub — Vulnerable VMs](https://www.vulnhub.com/)
-- [NetworkChuck — Original Tutorial (YouTube)](https://www.youtube.com/networkchuck) (Thank you!)
+- [VulnHub - Vulnerable VMs](https://www.vulnhub.com/)
+- [NetworkChuck - Original Tutorial (YouTube)](https://www.youtube.com/networkchuck) (Thank you!)
