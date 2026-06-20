@@ -1,0 +1,46 @@
+<svg viewBox="0 0 760 460" xmlns="http://www.w3.org/2000/svg" font-family="ui-sans-serif, -apple-system, Segoe UI, Roboto, sans-serif" role="img" aria-labelledby="title desc">
+<title id="title">Hacking Lab architecture on an Apple Silicon M4 Mac</title>
+<desc id="desc">A macOS host runs two UTM virtual machines, Kali Linux ARM64 native and a Mr. Robot x86_64 emulated target, connected over an isolated host-only network with no internet or home-network access.</desc>
+
+<defs>
+<marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+<path d="M0 0 L10 5 L0 10 z" fill="#6b7280"/>
+</marker>
+</defs>
+
+<rect x="0" y="0" width="760" height="460" fill="#ffffff"/>
+
+<!-- Host outer container -->
+<rect x="24" y="20" width="712" height="420" rx="14" fill="#f8fafc" stroke="#0f172a" stroke-width="2"/>
+<text x="380" y="52" text-anchor="middle" font-size="20" font-weight="700" fill="#0f172a">macOS Host — Apple Silicon M4 Mac</text>
+<text x="380" y="73" text-anchor="middle" font-size="13" fill="#64748b">UTM virtualization</text>
+
+<!-- Kali VM -->
+<rect x="70" y="100" width="270" height="150" rx="12" fill="#ecfdf5" stroke="#16a34a" stroke-width="2"/>
+<text x="205" y="132" text-anchor="middle" font-size="17" font-weight="700" fill="#14532d">Kali Linux</text>
+<text x="205" y="155" text-anchor="middle" font-size="13" fill="#166534">ARM64 native · Virtualize</text>
+<line x1="100" y1="170" x2="310" y2="170" stroke="#bbf7d0" stroke-width="1.5"/>
+<text x="205" y="194" text-anchor="middle" font-size="14" font-weight="600" fill="#14532d">192.168.128.2</text>
+<text x="205" y="216" text-anchor="middle" font-size="12.5" fill="#166534">Attacker · fast</text>
+
+<!-- Mr Robot VM -->
+<rect x="420" y="100" width="270" height="150" rx="12" fill="#fef2f2" stroke="#dc2626" stroke-width="2"/>
+<text x="555" y="132" text-anchor="middle" font-size="17" font-weight="700" fill="#7f1d1d">Mr. Robot VM</text>
+<text x="555" y="155" text-anchor="middle" font-size="13" fill="#991b1b">x86_64 emulated · QEMU</text>
+<line x1="450" y1="170" x2="660" y2="170" stroke="#fecaca" stroke-width="1.5"/>
+<text x="555" y="194" text-anchor="middle" font-size="14" font-weight="600" fill="#7f1d1d">192.168.128.3</text>
+<text x="555" y="216" text-anchor="middle" font-size="12.5" fill="#991b1b">Target · ports 80, 443</text>
+
+<!-- Connection between VMs -->
+<line x1="340" y1="175" x2="420" y2="175" stroke="#6b7280" stroke-width="2" marker-start="url(#arrow)" marker-end="url(#arrow)"/>
+
+<!-- Drop lines into network bar -->
+<path d="M205 250 L205 300 L380 300" fill="none" stroke="#6b7280" stroke-width="2"/>
+<path d="M555 250 L555 300 L380 300" fill="none" stroke="#6b7280" stroke-width="2"/>
+<line x1="380" y1="300" x2="380" y2="322" stroke="#6b7280" stroke-width="2" marker-end="url(#arrow)"/>
+
+<!-- Host-only network bar -->
+<rect x="70" y="326" width="620" height="86" rx="12" fill="#eff6ff" stroke="#2563eb" stroke-width="2"/>
+<text x="380" y="356" text-anchor="middle" font-size="16" font-weight="700" fill="#1e3a8a">Host-Only Network — isolated</text>
+<text x="380" y="384" text-anchor="middle" font-size="13.5" fill="#1d4ed8">✗ No internet&#160;&#160;&#160;&#160;✗ No home network&#160;&#160;&#160;&#160;✓ VMs reach each other</text>
+</svg>
