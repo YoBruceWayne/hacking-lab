@@ -16,23 +16,7 @@ The lab runs entirely on one machine with **Host Only networking**, meaning the 
 
 ## Architecture
 
-```
-┌──────────────────────────────────────────────────────┐
-│                  macOS Host (M4 Mac)                  │
-│                                                       │
-│   ┌──────────────────┐   ┌────────────────────────┐   │
-│   │   Kali Linux     │   │    Mr. Robot VM        │   │
-│   │   ARM64 native   │◄─►│    x86_64 emulated     │   │
-│   │   192.168.128.2  │   │    192.168.128.3       │   │
-│   │                  │   │    Ports: 80, 443      │   │
-│   └──────────────────┘   └────────────────────────┘   │
-│              │                       │                 │
-│              └───────┬───────────────┘                 │
-│                      │                                 │
-│           Host Only Network (isolated)                 │
-│           ✗ No internet    ✗ No home network           │
-└──────────────────────────────────────────────────────┘
-```
+![Lab Architecture](architecture.svg)
 
 ## Why UTM Instead of VirtualBox?
 
